@@ -1,0 +1,7 @@
+sudo tcpdump -i eth0 -X udp port 3333
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
+20:55:07.367915 IP 172.30.1.122.43104 > ip-172-30-1-145.3333: UDP, length 14
+	0x0000:  4500 002a a0d6 4000 4011 3ea5 ac1e 017a  E..*..@.@.>....z
+	0x0010:  ac1e 0191 a860 0d05 0016 f278 0d68 656c  .....`.....x.hel
+	0x0020:  6c6f 2077 6f72 6c64 210a                 lo.world!.

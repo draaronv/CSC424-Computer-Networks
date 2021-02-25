@@ -1,0 +1,40 @@
+class: csc424-212
+project: proj0
+student: Aaron Valdes
+date:
+
+grade: 2/3
+
+
+hello.c (#):	1/1
+makefile (%):	1/2
+
+lateness:	(0)/(2)
+
+commit:
+r51 | axv725 | 2021-02-03 03:07:58 +0000 (Wed, 03 Feb 2021) | 1 line
+
+comments:
+
+
+	make clean
+	rm *.out
+
+	make test
+	gcc hello.c -o hello.out
+	./hello.out
+	Hello World!
+
+	make clean
+	rm *.out
+
+	make all
+	gcc hello.c -o hello.out
+	./hello.out
+	Hello World!
+	rm *.out
+
+	ls *.ref
+	ls: cannot access '*.ref': No such file or directory
+
+	no testing file

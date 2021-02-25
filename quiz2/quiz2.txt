@@ -1,0 +1,86 @@
+QUIZ 2
+
+Name:
+Grade:
+
+Date out: 17 Feb 2021
+Date due: 22 Feb 2021
+
+
+1. Copy all files in the directory to your quiz2 folder.
+2. Find two class A address, two class B address and
+   two class C address and fill out the work sheet below.
+3. Finish the program class-ip.c. A sample test is provide.
+4. Write directly below, the numerical address range of Classes
+   A through C, by considering the lowest number IP address and
+   the highest number IP address consistent with the bit 
+   patterns that indicate the IP address class. (use dotted decimal)
+
+   Also, give the network address (the IP address the denotes the
+   network itself) and the broadcast address (the IP address that
+   addresses  all hosts on the network).
+   
+
+
+CLASS A:
+	lowest:0.0.0.0
+	highest:127.255.255.255
+	network:x.0.0.0
+	broadcast:x.255.255.255
+
+CLASS B:
+	lowest:128.0.0.0
+	highest:191.255.255.255
+	network:x.x.0.0
+	broadcast:x.x.255.255
+
+CLASS C:
+	lowest:192.0.0.0
+	highest:223.255.255.255
+	network:x.x.x.0
+	broadcast:x.x.x.255
+
+
+FILLING OUT THE WORKSHEET
+
+   - Place the IP in dotted decimal replacing _._._._
+   - Convert the high byte to binary and write the
+     8 bit number into the boxes.
+   - Beneath the boxes place * on the 1, 2, or 3 bits
+     that determine the class.
+`
+
+CLASS A
+
+   +----+----+----+----++----+----+----+----+
+   | 0  | 0  | 0  | 0  || 0  | 0  | 0  | 0  |  dotted decimal: 0.0.0.0
+   +----+----+----+----++----+----+----+----+
+     *
+
+   +----+----+----+----++----+----+----+----+
+   | 0  | 1  | 1  | 1  || 1  | 1  | 1  | 1  |  dotted decimal: 127.255.255.255
+   +----+----+----+----++----+----+----+----+
+     *
+
+CLASS B
+
+   +----+----+----+----++----+----+----+----+
+   | 1  | 0  | 0  | 0  || 0  | 0  | 0  | 0  |  dotted decimal: 128.0.0.0
+   +----+----+----+----++----+----+----+----+
+     *    *
+   +----+----+----+----++----+----+----+----+
+   | 1  | 0  | 1  | 1  || 1  | 1  | 1  | 1  |  dotted decimal: 191.255.255.255
+   +----+----+----+----++----+----+----+----+
+     *    *
+
+CLASS C
+
+   +----+----+----+----++----+----+----+----+
+   | 1  | 1  | 0  | 0  || 0  | 0  | 0  | 0  |  dotted decimal: 192.0.0.0
+   +----+----+----+----++----+----+----+----+
+     *    *    *
+
+   +----+----+----+----++----+----+----+----+
+   | 1  | 1  | 0  | 1  || 1  | 1  | 1  | 1  |  dotted decimal: 223.255.255.255
+   +----+----+----+----++----+----+----+----+
+     *    *    *
