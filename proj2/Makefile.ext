@@ -1,0 +1,63 @@
+#
+# makefile author: bjr
+# last-update:
+#	11 feb 2021: (bjr) updated for simple-datagram
+#
+
+HOST= 172.30.1.145
+MESSAGE= "hello world!"
+PORT = 3333
+
+REF_FILE=test.ref
+BIN_REF_FILE=test_bin.ref
+
+RED= \033[0;31m
+GREEN= \033[0;32m
+NC= \033[0m
+
+all:
+	make simple-datagram
+
+simple-datagram: simple-datagram.c simple-data-c.o simple-data-s.o simple-data.h
+	cc -o $@ $< simple-data-c.o simple-data-s.o
+
+simple-data-s.o: simple-data-s.c simple-data.h
+	cc -c $<
+
+simple-data-c.o: simple-data-c.c simple-data.h
+	cc -c $<
+
+run-server: simple-datagram
+	./simple-datagram -p ${PORT}
+
+run-client: simple-datagram
+	./simple-datagram -p ${PORT} ${HOST}
+
+test-basic: simple-datagram
+	echo "hello world!" > ${REF_FILE}
+	./simple-datagram -p ${PORT} > test.out &
+	echo  ${MESSAGE} | ./simple-datagram -p ${PORT} localhost
+	diff test.out ${REF_FILE}
+	@echo "***\n*** ${GREEN}PASSED${NC}\n***"
+
+test-bin1: simple-datagram
+	head -c 50 /dev/random > ${BIN_REF_FILE}
+	./simple-datagram -p ${PORT} > test.out &
+	cat  ${BIN_REF_FILE} | ./simple-datagram -p ${PORT} localhost
+	diff test.out ${BIN_REF_FILE}
+	@echo "***\n*** ${GREEN}PASSED${NC}\n***"
+
+test-bin2: simple-datagram
+	head -c 255 /dev/random > ${BIN_REF_FILE}
+	./simple-datagram -p ${PORT} > test.out &
+	cat  ${BIN_REF_FILE} | ./simple-datagram -p ${PORT} localhost
+	diff test.out ${BIN_REF_FILE}
+	@echo "***\n*** ${GREEN}PASSED${NC}\n***"
+
+tcpdump:
+	sudo tcpdump -i eth0 -X udp port ${PORT}
+
+clean:
+	-rm simple-data-c.o simple-data-s.o simple-datagram test.out
+
+

@@ -1,11 +1,21 @@
 QUIZ 2
 
-Name:
-Grade:
+Name: Aaron Valdes
+Grade:  8/9
+commit:
+r441 | axv725 | 2021-02-22 22:10:03 -0500 (Mon, 22 Feb 2021) | 1 line
 
 Date out: 17 Feb 2021
 Date due: 22 Feb 2021
 
+1/1 masks are expressed in hexadecimal
+1/2 ip to unsigned int
+2/2 correctly determines the class
+2/2 correctly checks if same network
+2/2 worksheet correctly filled
+
+*** please do not submit build products to the repo!
+*** ip_to_uint uses pow; routers do not have pow
 
 1. Copy all files in the directory to your quiz2 folder.
 2. Find two class A address, two class B address and
@@ -13,13 +23,13 @@ Date due: 22 Feb 2021
 3. Finish the program class-ip.c. A sample test is provide.
 4. Write directly below, the numerical address range of Classes
    A through C, by considering the lowest number IP address and
-   the highest number IP address consistent with the bit 
+   the highest number IP address consistent with the bit
    patterns that indicate the IP address class. (use dotted decimal)
 
    Also, give the network address (the IP address the denotes the
    network itself) and the broadcast address (the IP address that
    addresses  all hosts on the network).
-   
+
 
 
 CLASS A:

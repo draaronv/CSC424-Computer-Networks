@@ -26,7 +26,7 @@ simple-data-c.o: simple-data-c.c simple-data.h
 	cc -c $< 
 
 run-server: simple-datagram
-	./simple-datagram -p ${PORT}
+	./simple-datagram -p ${PORT} > testserver.txt
 	
 run-client: simple-datagram
 	echo ${MESSAGE} | ./simple-datagram -p ${PORT} ${HOST}
